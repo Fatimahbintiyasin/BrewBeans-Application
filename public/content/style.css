@@ -1,0 +1,242 @@
+body {
+  font-family: Arial, sans-serif;
+  /* background-color: #f2f2f2; */
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: brown;
+}
+
+h2 {
+  text-align: left;
+  font-size: 26px;
+  margin: 10px;
+  color: peru;
+}
+
+ul {
+  margin-left: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 75%;
+  background-color: #ffffff;
+  margin-bottom:  auto;
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 12px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+a {
+  text-decoration: none;
+  color: #0066cc;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-frame {
+  border: 1px solid #dddddd;
+  padding: 20px;
+  background-color: #ffffff;
+  margin-top: 20px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #333333;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #0066cc;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #06294d;
+}
+
+
+.ship-button,
+.view-items-button,
+.edit-button,
+.delete-button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0; /* Add this line to remove margin */
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.add-button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin-left: 10px; /* Add margin to create space between text and button */
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.edit-button-view {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0; /* Add this line to remove margin */
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.delete-form {
+  margin: 0; /* Add this line to remove margin from the form element */
+}
+
+.ship-button img,
+.view-items-button img,
+.add-button img ,
+.edit-button img,
+.delete-button img {
+  width: 100%;
+  height: 100%;
+}
+
+.ship-button:hover {
+  background-color: skyblue;
+}
+
+.view-items-button:hover {
+  background-color: rgb(217, 178, 178);
+}
+
+.edit-button:hover {
+  background-color: green;
+}
+
+.delete-button:hover {
+  background-color: red;
+}
+
+.add-button:hover {
+  background-color: blue; 
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+}
+
+.fit-content {
+  display: inline-block;
+}
+
+/* Define the CSS class to center the content */
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style for the edit link */
+.edit-link {
+  display: inline-block;
+  margin-left: 10px; /* Adjust the margin as needed */
+}
+
+/* Style for the edit button icon (optional) */
+.edit-button img {
+  vertical-align: middle; /* To vertically align the icon with the text */
+}
+
+/* Style for the grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Three columns with equal width */
+  gap: 20px; /* Adjust the gap between columns as needed */
+  align-items: center; /* Vertically align items in the center */
+}
+
+/* Style for the left column */
+.left-column {
+  grid-column: 1; /* Place this column in the first grid cell */
+  text-align: center; /* Align the content to the right */
+}
+
+/* Style for the middle column */
+.middle-column {
+  grid-column: 2; /* Place this column in the second grid cell */
+  text-align: center; /* Align the content to the right */
+}
+
+/* Style for the right column */
+.right-column {
+  grid-column: 3; /* Place this column in the third grid cell */
+  text-align: center; /* Align the content to the right */
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh;  */
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; 
+}
