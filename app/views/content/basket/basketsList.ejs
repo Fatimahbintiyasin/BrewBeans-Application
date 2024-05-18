@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Baskets List</title>
+  <link rel="stylesheet" href="/content/style.css">
+</head>
+<body>
+
+  <div class="centered-content">
+    <h1 class="header-title">
+      Baskets
+      <a href="/basketadd">
+        <button class="add-button">
+          <img src="/content/images/add_icon.png" alt="Add" width="40" height="40">
+        </button>
+      </a>
+    </h1>
+  </div>
+
+  <div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Shopper ID</th>
+        <th>Quantity</th>
+        <th>SubTotal</th>
+        <th>Shipping</th>
+        <th>Tax</th>
+        <th>Total</th>
+        <th>Order Placed</th>
+        <th>Ship</th>
+        <th>View Items</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% baskets.forEach(basket => { %>
+        <tr>
+          <td><a href="/basketview/<%= basket.idBasket %>"><%= basket.idBasket %></a></td>
+          <td><a href="/basketview/<%= basket.idBasket %>"><%= basket.idShopper %></a></td>
+          <td><a href="/basketview/<%= basket.idBasket %>"><%= basket.Quantity %></a></td>
+          <td><a href="/basketview/<%= basket.idBasket %>"><%= basket.SubTotal %></a></td>
+          <td><%= basket.Shipping %></td>
+          <td><%= basket.Tax %></td>
+          <td><a href="/basketview/<%= basket.idBasket %>"><%= basket.Total %></a></td>
+          <td><%= basket.OrderPlaced %></td>
+          <td>
+            <a href="/basketstatuslist/<%= basket.idBasket %>">
+              <button class="ship-button">
+                <img src="/content/images/ship_icon.png" alt="Edit" width="30" height="30">
+              </button>
+            </a>
+          </td>
+          <td>
+            <a href="/basketitemslistview/<%= basket.idBasket %>">
+              <button class="view-items-button">
+                <img src="/content/images/view_icon.png" alt="Edit" width="30" height="30">
+              </button>
+            </a>
+          </td>
+          <td>
+            <a href="/basketupdate/<%= basket.idBasket %>">
+              <button class="edit-button">
+                <img src="/content/images/edit_icon.png" alt="Edit" width="30" height="30">
+              </button>
+            </a>
+          </td>
+          <td>
+            <form action="/basketdelete/<%= basket.idBasket %>" method="post" class="delete-form">
+              <button type="submit" class="delete-button">
+                <img src="/content/images/delete_icon.png" alt="Delete" width="30" height="30">
+              </button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="centered-content">
+    <h1 class="header-title">
+      Baskets
+      <a href="/basketadd">
+        <button class="add-button">
+          <img src="/content/images/add_icon.png" alt="Add" width="40" height="40">
+        </button>
+      </a>
+    </h1>
+  </div>
+
+</body>
+</html>

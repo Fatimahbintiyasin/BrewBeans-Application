@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shoppers List</title>
+  <link rel="stylesheet" href="/content/style.css">
+</head>
+<body>
+
+  <div class="centered-content">
+    <h1 class="header-title">
+      Shoppers
+      <a href="/shopperadd">
+        <button class="add-button">
+          <img src="/content/images/add_icon.png" alt="Add" width="40" height="40">
+        </button>
+      </a>
+    </h1>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Total Purchase</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip Code</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Username</th>
+          <!-- <th>Edit</th>
+          <th>Delete</th> -->
+        </tr>
+      </thead>
+
+      <tbody>
+        <% shoppers.forEach(shopper => { %>
+          <tr>
+            <td><a href="/shopperview/<%= shopper.idShopper %>"><%= shopper.idShopper %></a></td>
+            <td><%= shopper.FirstName %></td>
+            <td><%= shopper.LastName %></td>
+            <td><%= shopper.TOTAL_PURCHASES %></td>
+            <td><%= shopper.City %></td>
+            <td><%= shopper.State %></td>
+            <td><%= shopper.ZipCode %></td>
+            <td><%= shopper.Phone %></td>
+            <td><%= shopper.Email %></td>
+            <td><%= shopper.UserName %></td>
+            <!-- <td>
+              <a href="/shopperupdate/<%= shopper.idShopper %>">
+                <button class="edit-button">
+                  <img src="/content/images/edit_icon.png" alt="Edit" width="30" height="30">
+                </button>
+              </a>
+            </td>
+            <td>
+              <form action="/shopperdelete/<%= shopper.idShopper %>" method="post" class="delete-form">
+                <button type="submit" class="delete-button">
+                  <img src="/content/images/delete_icon.png" alt="Delete" width="30" height="30">
+                </button>
+              </form>
+            </td> -->
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

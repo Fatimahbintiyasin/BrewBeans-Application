@@ -1,0 +1,99 @@
+<body>
+  <h1>Product Details</h1>
+  <form action="/productupdate/<%= product.idProduct %>" method="post">
+
+    <div class="table-container">
+    <table>
+      <tr>
+        <td>ID:</td>
+        <td><%= product.idProduct %></td>
+        <td rowspan="5" style="width: 300px; text-align: center;">
+
+          <!-- Display the current product image -->
+          <img src="/content/images/<%= product.ProductImage %>" alt="<%= product.ProductName %> Image" width="200" height="200">
+          <br><br>
+          <div class="fit-content" style="margin-left: 80px;"> <!-- Adjust the margin as needed -->
+            <input type="file" name="productImage" accept="image/*">
+          </div>
+  
+            <!-- <img src="/content/images/<%= product.ProductImage %>" alt="<%= product.ProductName %> Image" width="200" height="200"> -->
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>Name:</td>
+        <td><input type="text" name="ProductName" value="<%= product.ProductName %>" required></td>
+      </tr>
+      <tr>
+        <td>Description:</td>
+        <td><textarea name="Description" rows="2" required><%= product.Description %></textarea></td>
+      </tr>
+      <tr>
+        <td>Stock:</td>
+        <td><input type="number" name="STOCK" value="<%= product.STOCK %>" required></td>
+      </tr>
+      <tr>
+        <td>Price:</td>
+        <td><input type="number" name="Price" value="<%= product.Price.toFixed(2) %>" step="0.01" required></td>
+      </tr>
+      <tr>
+        <td>Department:</td>
+        <td colspan="2">
+          <% depts.forEach((dept) => { %>
+            <label>
+              <input type="radio" name="idDepartment" value="<%= dept.idDeptartment %>" <%= product.idDepartment == dept.idDeptartment ? 'checked' : '' %>>
+              <%= dept.deptName %>
+            </label>
+          <% }) %>
+        </td>
+      </tr>
+      <tr>
+        <td>Sale Start:</td>
+        <td colspan="2"><input type="date" name="SaleStart" value="<%= product.SaleStart %>"></td>
+      </tr>
+      <tr>
+        <td>Sale End:</td>
+        <td colspan="2"><input type="date" name="SaleEnd" value="<%= product.SaleEnd %>"></td>
+      </tr>
+      <tr>
+        <td>Sale Price:</td>
+        <td colspan="2"><input type="number" name="SalePrice" value="<%= product.SalePrice %>"></td>
+      </tr>
+      <tr>
+        <td>Active:</td>
+        <td colspan="2"><input type="checkbox" name="Active" <%= product.Active ? 'checked' : '' %>></td>
+      </tr>
+      <tr>
+        <td>Featured:</td>
+        <td colspan="2"><input type="checkbox" name="Featured" <%= product.Featured ? 'checked' : '' %>></td>
+      </tr>
+      <tr>
+        <td>Feature Start:</td>
+        <td colspan="2"><input type="date" name="FeatureStart" value="<%= product.FeatureStart %>"></td>
+      </tr>
+      <tr>
+        <td>Feature End:</td>
+        <td colspan="2"><input type="date" name="FeatureEnd" value="<%= product.FeatureEnd %>"></td>
+      </tr>
+      <tr>
+        <td>Type:</td>
+        <td colspan="2"><input type="text" name="Type" value="<%= product.Type %>"></td>
+      </tr>
+      <tr>
+        <td>ORDERED:</td>
+        <td colspan="2"><input type="number" name="ORDERED" value="<%= product.ORDERED %>" ></td>
+      </tr>
+      <tr>
+        <td>REORDER:</td>
+        <td colspan="2"><input type="number" name="REORDER" value="<%= product.REORDER %>" ></td>
+      </tr>
+    </table>
+    </div>
+    
+    <div class="button-container">
+      <button type="submit" class="btn btn-success">Update</button>
+      <a href="/productslist" class="btn btn-danger">Cancel</a>
+    </div>
+  </form>
+</body>

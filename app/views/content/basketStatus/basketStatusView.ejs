@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basket View</title>
+  <link rel="stylesheet" href="/content/style.css">
+</head>
+<body>
+  
+  <div class="centered-content">
+    <h1 class="header-title">Basket Status</h1>
+  </div>
+  <div class="grid-container">
+    <div class="left-column">
+      <a href="/basketslist">< Back to All baskets</a>
+    </div>
+    <div class="middle-column">
+      <h2 class="subtitle"></h2>
+    </div>
+    <div class="right-column">
+      <% if (basketStatus) { %>
+        <a href="/basketstatusadd/<%= basketStatus.idBasket %>" class="edit-link">
+          <button class="edit-button-view">
+            <img src="/content/images/edit_icon.png" alt="Edit" width="50" height="50">
+          </button>
+        </a>
+      <% } %>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <tr>
+        <td>Basket ID:</td>
+        <td><%= basketStatus ? basketStatus.idBasket : 'NA' %></td>
+      </tr>
+
+      <tr>
+        <td>Status ID:</td>
+        <td><%= basketStatus ? basketStatus.idStatus : 'NA' %></td>
+      </tr>
+      
+      <tr>
+        <td>Stage ID:</td>
+        <td><%= basketStatus ? basketStatus.idStage : 'NA' %></td>
+      </tr>
+
+      <tr>
+        <td>Stage Date:</td>
+        <td><%= basketStatus ? basketStatus.dtStage : 'NA' %></td>
+      </tr>
+
+      <tr>
+        <td>Notes:</td>
+        <td><%= basketStatus ? basketStatus.Notes : 'NA' %></td>
+      </tr>
+
+      <tr>
+        <td>Shipper:</td>
+        <td><%= basketStatus ? basketStatus.shipper : 'NA' %></td>
+      </tr>
+
+      <tr>
+        <td>Shipping Number:</td>
+        <td><%= basketStatus ? basketStatus.ShippingNum : 'NA' %></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="grid-container">
+    <div class="left-column">
+      <a href="/basketslist">< Back to All baskets</a>
+    </div>
+    <div class="middle-column">
+      <h2 class="subtitle"></h2>
+    </div>
+    <div class="right-column">
+      <% if (basketStatus) { %>
+        <a href="/basketstatusadd/<%= basketStatus.idBasket %>" class="edit-link">
+          <button class="edit-button-view">
+            <img src="/content/images/edit_icon.png" alt="Edit" width="50" height="50">
+          </button>
+        </a>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>

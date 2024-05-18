@@ -1,0 +1,178 @@
+<body>
+  <h1>Basket Details</h1>
+  <form action="/basketupdate/<%= basket.idBasket %>" method="post">
+    <div class="table-container">
+
+    <table>
+      <tr>
+        <td>ID:</td>
+        <td><%= basket.idBasket %></td>
+      </tr>
+      <tr>
+        <td>Quantity:</td>
+        <td><input type="number" name="Quantity" value="<%= basket.Quantity %>" required></td>
+      </tr>
+      <tr>
+        <td>Shopper ID:</td>
+        <td><input type="text" name="idShopper" value="<%= basket.idShopper %>" required></td>
+      </tr>
+      <tr>
+        <td>Order Placed:</td>
+        <td><input type="checkbox" name="OrderPlaced" <%= basket.OrderPlaced === 1 ? 'checked' : '' %>></td>
+      </tr>
+      <tr>
+        <td>SubTotal:</td>
+        <td><input type="number" name="SubTotal" value="<%= basket.SubTotal %>" step="0.01" required></td>
+      </tr>
+      <tr>
+        <td>Total:</td>
+        <td><input type="number" name="Total" value="<%= basket.Total %>" step="0.01" required></td>
+      </tr>
+      <tr>
+        <td>Shipping:</td>
+        <td><input type="number" name="Shipping" value="<%= basket.Shipping %>" step="0.01" required></td>
+      </tr>
+      <tr>
+        <td>Tax:</td>
+        <td><input type="number" name="Tax" value="<%= basket.Tax %>" step="0.01" required></td>
+      </tr>
+      <tr>
+        <td>Created Date:</td>
+        <td><input type="date" name="dtCreated" value="<%= basket.dtCreated %>"></td>
+      </tr>
+      <!-- Add other fields from the model here -->
+      <tr>
+        <td>Promo:</td>
+        <td><input type="text" name="Promo" value="<%= basket.Promo %>"></td>
+      </tr>
+      <tr>
+        <td>Ship First Name:</td>
+        <td><input type="text" name="ShipFirstName" value="<%= basket.ShipFirstName %>"></td>
+      </tr>
+      <tr>
+        <td>Ship Last Name:</td>
+        <td><input type="text" name="ShipLastName" value="<%= basket.ShipLastName %>"></td>
+      </tr>
+      <tr>
+        <td>Ship Address:</td>
+        <td><input type="text" name="ShipAddress" value="<%= basket.ShipAddress %>"></td>
+      </tr>
+      <tr>
+        <td>Ship City:</td>
+        <td><input type="text" name="ShipCity" value="<%= basket.ShipCity %>"></td>
+      </tr>
+      <tr>
+        <td>Ship State:</td>
+        <td><input type="text" name="ShipState" value="<%= basket.ShipState %>"></td>
+      </tr>
+      <tr>
+        <td>Ship ZipCode:</td>
+        <td><input type="text" name="ShipZipCode" value="<%= basket.ShipZipCode %>"></td>
+      </tr>
+      <tr>
+        <td>Ship Phone:</td>
+        <td><input type="text" name="ShipPhone" value="<%= basket.ShipPhone %>"></td>
+      </tr>
+      <tr>
+        <td>Ship Fax:</td>
+        <td><input type="text" name="ShipFax" value="<%= basket.ShipFax %>"></td>
+      </tr>
+      <tr>
+        <td>Ship Email:</td>
+        <td><input type="text" name="ShipEmail" value="<%= basket.ShipEmail %>"></td>
+      </tr>
+      <tr>
+        <td>Bill First Name:</td>
+        <td><input type="text" name="BillFirstName" value="<%= basket.BillFirstName %>"></td>
+      </tr>
+      <tr>
+        <td>Bill Last Name:</td>
+        <td><input type="text" name="BillLastName" value="<%= basket.BillLastName %>"></td>
+      </tr>
+      <tr>
+        <td>Bill Address:</td>
+        <td><input type="text" name="BillAddress" value="<%= basket.BillAddress %>"></td>
+      </tr>
+      <tr>
+        <td>Bill City:</td>
+        <td><input type="text" name="BillCity" value="<%= basket.BillCity %>"></td>
+      </tr>
+      <tr>
+        <td>Bill State:</td>
+        <td><input type="text" name="BillState" value="<%= basket.BillState %>"></td>
+      </tr>
+      <tr>
+        <td>Bill ZipCode:</td>
+        <td><input type="text" name="BillZipCode" value="<%= basket.BillZipCode %>"></td>
+      </tr>
+
+      <tr>
+        <td>Bill Phone:</td>
+        <td><input type="text" name="BillPhone" value="<%= basket.BillPhone %>"></td>
+      </tr>
+      <tr>
+        <td>Bill Fax:</td>
+        <td><input type="text" name="BillFax" value="<%= basket.BillFax %>"></td>
+      </tr>
+      <tr>
+        <td>Bill Email:</td>
+        <td><input type="text" name="BillEmail" value="<%= basket.BillEmail %>"></td>
+      </tr>
+      <tr>
+        <td>Date Ordered:</td>
+        <td><input type="text" name="dtOrdered" value="<%= basket.dtOrdered %>"></td>
+      </tr>
+      <tr>
+        <td>Ship Province:</td>
+        <td><input type="text" name="ShipProvince" value="<%= basket.ShipProvince %>"></td>
+      </tr>
+      <tr>
+        <td>Ship Country:</td>
+        <td><input type="text" name="ShipCountry" value="<%= basket.ShipCountry %>"></td>
+      </tr>
+      <tr>
+        <td>Bill Province:</td>
+        <td><input type="text" name="BillProvince" value="<%= basket.BillProvince %>"></td>
+      </tr>
+      <tr>
+        <td>Bill Country:</td>
+        <td><input type="text" name="BillCountry" value="<%= basket.BillCountry %>"></td>
+      </tr>
+
+      <tr>
+        <td>Card Type:</td>
+        <td><input type="text" name="CardType" value="<%= basket.CardType %>"></td>
+      </tr>
+      <tr>
+        <td>Card Number:</td>
+        <td><input type="text" name="CardNumber" value="<%= basket.CardNumber %>"></td>
+      </tr>
+      <tr>
+        <td>Exp Month:</td>
+        <td><input type="number" name="ExpMonth" value="<%= basket.ExpMonth %>"></td>
+      </tr>
+      <tr>
+        <td>Exp Year:</td>
+        <td><input type="number" name="ExpYear" value="<%= basket.ExpYear %>"></td>
+      </tr>
+      <tr>
+        <td>Card Name:</td>
+        <td><input type="text" name="CardName" value="<%= basket.CardName %>"></td>
+      </tr>
+      <tr>
+        <td>Ship Bill:</td>
+        <td><input type="text" name="shipbill" value="<%= basket.shipbill %>"></td>
+      </tr>
+      <tr>
+        <td>Ship Flag:</td>
+        <td><input type="text" name="ShipFlag" value="<%= basket.ShipFlag %>"></td>
+      </tr>
+    </table>
+    </div>
+    
+    <div class="button-container">
+      <button type="submit" class="btn btn-success">Update</button>
+      <a href="/basketslist" class="btn btn-danger">Cancel</a>
+    </div>
+  </form>
+</body>

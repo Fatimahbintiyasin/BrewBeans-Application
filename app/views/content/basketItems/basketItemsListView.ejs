@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basket # <%= basketId %></title>
+  <link rel="stylesheet" href="/content/style.css">
+</head>
+<body>
+
+  <div class="centered-content">
+    <h1 class="header-title">
+      Basket # <%= basketId %> - Items List (<%= stockMsg %>)
+    </h1>
+  </div>
+
+  <div class="centered-content">
+    <h2 class="header-title">
+      Shopper: <%= basketTax[1] %> - State: <%= basketTax[2] %> - 
+      Tax Rate: <%= basketTax[3] %>  - Tax value: <%= basketTax[4] %>
+    </h2>
+  </div>
+
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Item ID</th>
+          <th>Product ID</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Option 1</th>
+          <th>Option 2</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% basketItemList.forEach(item => { %>
+          <tr>
+            <td><%= item[0] %></td>
+            <td><%= item[1] %></td>
+            <td><%= item[2] %></td>
+            <td><%= item[3] %></td>
+            <td><%= item[5] %></td>
+            <td><%= item[6] %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

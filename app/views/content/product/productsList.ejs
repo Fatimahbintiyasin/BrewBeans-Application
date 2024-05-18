@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Products List</title>
+  <link rel="stylesheet" href="/content/style.css">
+</head>
+<body>
+
+  <div class="centered-content">
+    <h1 class="header-title">
+      Products 
+      <a href="/productadd">
+        <button class="add-button">
+          <img src="/content/images/add_icon.png" alt="Add" width="40" height="40">
+        </button>
+      </a>
+    </h1>
+  </div>
+
+
+  <div class="table-container">
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Stock</th>
+        <th>Price</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <% products.forEach(product => { %>
+          <tr>
+            <td><a href="/productview/<%= product.idProduct %>"><%= product.idProduct %></a></td>
+            <td><a href="/productview/<%= product.idProduct %>"><%= product.ProductName %></a></td>
+            <td><a href="/productview/<%= product.idProduct %>"><%= product.Description %></a></td>
+            <td><%= product.STOCK %></td>
+            <td>$<%= product.Price %></td>
+            <td>
+              <a href="/productupdate/<%= product.idProduct %>">
+                <button class="edit-button">
+                  <img src="/content/images/edit_icon.png" alt="Edit" width="30" height="30">
+                </button>
+              </a>
+            </td>
+            <td>
+              <form action="/productdelete/<%= product.idProduct %>" method="post" class="delete-form">
+                <button type="submit" class="delete-button">
+                  <img src="/content/images/delete_icon.png" alt="Delete" width="30" height="30">
+                </button>
+              </form>
+            </td>
+            
+          </tr>
+        <% }) %>
+      </tbody>
+  </table>
+  </div>
+  
+
+
+  <div class="centered-content">
+    <h1 class="header-title">
+      Products 
+      <a href="/productadd">
+        <button class="add-button">
+          <img src="/content/images/add_icon.png" alt="Add" width="40" height="40">
+        </button>
+      </a>
+    </h1>
+  </div>
+
+</body>
+</html>

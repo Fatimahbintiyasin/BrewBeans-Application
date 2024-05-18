@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basket View</title>
+  <link rel="stylesheet" href="/content/style.css">
+</head>
+<body>
+  
+  <div class="centered-content">
+    <h1 class="header-title">Basket Details   </h1>
+  </div>
+  <div class="grid-container">
+    <div class="left-column">
+      <a href="/basketslist">< Back to All baskets</a>
+    </div>
+    <div class="middle-column">
+      <h2 class="subtitle"> </h2>
+    </div>
+    <div class="right-column">
+      <a href="/basketupdate/<%= basket.idBasket %>" class="edit-link">
+        <button class="edit-button-view">
+          <img src="/content/images/edit_icon.png" alt="Edit" width="50" height="50">
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <div class="table-container">
+
+    <table>
+      <tr>
+        <td>ID:</td>
+        <td><%= basket.idBasket %></td>
+      </tr>
+      <tr>
+        <td>Quantity:</td>
+        <td><%= basket.Quantity %></td>
+      </tr>
+      <tr>
+        <td>Shopper ID:</td>
+        <td><%= basket.idShopper %></td>
+      </tr>
+      <tr>
+        <td>Order Placed:</td>
+        <td><%= basket.OrderPlaced %></td>
+      </tr>
+      <tr>
+        <td>SubTotal:</td>
+        <td><%= basket.SubTotal %></td>
+      </tr>
+      <tr>
+        <td>Total:</td>
+        <td><%= basket.Total %></td>
+      </tr>
+      <tr>
+        <td>Shipping:</td>
+        <td><%= basket.Shipping %></td>
+      </tr>
+      <tr>
+        <td>Tax:</td>
+        <td><%= basket.Tax %></td>
+      </tr>
+      <tr>
+        <td>Created Date:</td>
+        <td><%= basket.dtCreated %></td>
+      </tr>
+      <tr>
+        <td>Promo:</td>
+        <td><%= basket.Promo %></td>
+      </tr>
+      <tr>
+        <td>Ship First Name:</td>
+        <td><%= basket.ShipFirstName %></td>
+      </tr>
+      <tr>
+        <td>Ship Last Name:</td>
+        <td><%= basket.ShipLastName %></td>
+      </tr>
+      <tr>
+        <td>Ship Address:</td>
+        <td><%= basket.ShipAddress %></td>
+      </tr>
+      <tr>
+        <td>Ship City:</td>
+        <td><%= basket.ShipCity %></td>
+      </tr>
+      <tr>
+        <td>Ship State:</td>
+        <td><%= basket.ShipState %></td>
+      </tr>
+      <tr>
+        <td>Ship Zip Code:</td>
+        <td><%= basket.ShipZipCode %></td>
+      </tr>
+      <tr>
+        <td>Ship Phone:</td>
+        <td><%= basket.ShipPhone %></td>
+      </tr>
+      <tr>
+        <td>Ship Fax:</td>
+        <td><%= basket.ShipFax %></td>
+      </tr>
+      <tr>
+        <td>Ship Email:</td>
+        <td><%= basket.ShipEmail %></td>
+      </tr>
+      <tr>
+        <td>Bill First Name:</td>
+        <td><%= basket.BillFirstName %></td>
+      </tr>
+      <tr>
+        <td>Bill Last Name:</td>
+        <td><%= basket.BillLastName %></td>
+      </tr>
+      <tr>
+        <td>Bill Address:</td>
+        <td><%= basket.BillAddress %></td>
+      </tr>
+      <tr>
+        <td>Bill City:</td>
+        <td><%= basket.BillCity %></td>
+      </tr>
+      <tr>
+        <td>Bill State:</td>
+        <td><%= basket.BillState %></td>
+      </tr>
+      <tr>
+        <td>Bill Zip Code:</td>
+        <td><%= basket.BillZipCode %></td>
+      </tr>
+      <tr>
+        <td>Bill Phone:</td>
+        <td><%= basket.BillPhone %></td>
+      </tr>
+      <tr>
+        <td>Bill Fax:</td>
+        <td><%= basket.BillFax %></td>
+      </tr>
+      <tr>
+        <td>Bill Email:</td>
+        <td><%= basket.BillEmail %></td>
+      </tr>
+      <tr>
+        <td>Ordered Date:</td>
+        <td><%= basket.dtOrdered %></td>
+      </tr>
+      <tr>
+        <td>Ship Province:</td>
+        <td><%= basket.ShipProvince %></td>
+      </tr>
+      <tr>
+        <td>Ship Country:</td>
+        <td><%= basket.ShipCountry %></td>
+      </tr>
+      <tr>
+        <td>Bill Province:</td>
+        <td><%= basket.BillProvince %></td>
+      </tr>
+      <tr>
+        <td>Bill Country:</td>
+        <td><%= basket.BillCountry %></td>
+      </tr>
+      <tr>
+        <td>Card Type:</td>
+        <td><%= basket.CardType %></td>
+      </tr>
+      <tr>
+        <td>Card Number:</td>
+        <td><%= basket.CardNumber %></td>
+      </tr>
+      <tr>
+        <td>Expiration Month:</td>
+        <td><%= basket.ExpMonth %></td>
+      </tr>
+      <tr>
+        <td>Expiration Year:</td>
+        <td><%= basket.ExpYear %></td>
+      </tr>
+      <tr>
+        <td>Card Name:</td>
+        <td><%= basket.CardName %></td>
+      </tr>
+      <tr>
+        <td>Ship Bill:</td>
+        <td><%= basket.shipbill %></td>
+      </tr>
+      <tr>
+        <td>Ship Flag:</td>
+        <td><%= basket.ShipFlag %></td>
+      </tr>
+    </table>
+  </div>
+
+    <div class="grid-container">
+      <div class="left-column">
+        <a href="/basketslist">< Back to All baskets</a>
+      </div>
+      <div class="middle-column">
+        <h2 class="subtitle"> </h2>
+      </div>
+      <div class="right-column">
+        <a href="/basketupdate/<%= basket.idBasket %>" class="edit-link">
+          <button class="edit-button-view">
+            <img src="/content/images/edit_icon.png" alt="Edit" width="50" height="50">
+          </button>
+        </a>
+      </div>
+    </div>
+    
+</body>
+</html>

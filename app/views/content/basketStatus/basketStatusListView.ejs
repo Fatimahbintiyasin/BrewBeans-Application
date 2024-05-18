@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shipped Baskets Status List</title>
+  <link rel="stylesheet" href="/content/style.css">
+</head>
+<body>
+
+  <div class="centered-content">
+    <h1 class="header-title">
+       <a href="/basketview/<%= idBasket %>"> Shipped Basket # <%= idBasket %> - Status List </a>
+      <a href="/basketstatusadd/<%= idBasket %>">
+        <button class="add-button">
+          <img src="/content/images/add_icon.png" alt="Add" width="40" height="40">
+        </button>
+      </a>
+    </h1>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Status ID</th>
+          <th>Stage</th>
+          <th>Date of Stage</th>
+          <th>Notes</th>
+          <th>Shipper</th>
+          <th>Shipping Number</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% basketStatusList.forEach(status => { %>
+          <tr>
+            <td><%= status.idStatus %></td>
+            <td><%= status.idStage %></td>
+            <td><%= status.dtStage %></td>
+            <td><%= status.Notes %></td>
+            <td><%= status.shipper %></td>
+            <td><%= status.ShippingNum %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

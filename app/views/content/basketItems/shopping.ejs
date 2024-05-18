@@ -1,0 +1,174 @@
+
+<!-- products-shopping.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products Shopping</title>
+  <!-- Add your CSS stylesheets and other head elements as needed -->
+  <style>
+    /* Define your CSS styles for the page here */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .product-item {
+      /* Define styles for each product item in the grid */
+      /* For example, you can use flexbox to center the content vertically */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .product-image {
+      /* Define styles for the product image */
+      max-height: 150px;
+      height: auto;
+    }
+    .radio-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .radio-frame {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div>
+      <h1>Welcome, <%= shopperName %>! 
+        <div>
+          <!-- Dropdown list for basket items -->
+          <select id="basketList">
+            <% basketList.forEach(item => { %>
+              <option value="<%= item %>">Basket <%= item %></option>
+              <% }) %>
+            </select>
+          </div>
+          <%= shopDate %>
+      </h1>
+    </div>
+  </header>
+
+  <main>
+    <div class="product-grid">
+      <% for (const product of products) { %>
+      <div class="product-item">
+        <img class="product-image" src="/content/images/<%= product.ProductImage %>" alt="<%= product.name %>">
+        <h2> <%= product.idProduct %> - <%= product.ProductName %> - <%= promoList[product.idProduct] %></h2>
+        <p>Price: $<%= product.Price %></p>
+        <!-- Input for quantity and button to add the product to the basket -->
+        <input type="number" min="1" value="1" name="quantity" id="quantity-<%= product.idProduct %>">
+        
+        <!-- src="/content/images/Logo.png" -->
+
+        <!-- Radio Button Frames -->
+        <% if (productOption.includes(product.idProduct)) { %>
+          <div class="radio-container"> 
+            <% productOptionCategory.forEach((category, index) => { %>
+            <div class="radio-frame">
+              <label><%= category %></label>
+              <% productOptionDetails[category].forEach((detail, detailIndex) => { %>
+                <label>
+                  <input type="radio" name="option<%= index %>" value="<%= (index) * 2 + detailIndex + 1 %>">
+                  <%= detail %>
+                </label>
+              <% }) %>
+            </div>
+            <% }) %>
+          </div>
+          <% } %>
+        <button type="button" onclick="addToBasket('<%= JSON.stringify(product) %>')">Add to Basket</button>
+      </div>
+      <% } %>
+    </div>
+  </main>
+
+
+
+  <script>
+
+function addToBasket(productJSON) {
+  const product = JSON.parse(productJSON);
+  
+  // Get the quantity from the input field
+  const quantityInput = document.getElementById('quantity-' + product.idProduct);
+  const quantity = parseInt(quantityInput.value, 10);
+
+  // Get the selected radio button values for Size and Form
+  const sizeRadioOptions = document.getElementsByName('option0');
+  const formRadioOptions = document.getElementsByName('option1');
+  let sizeOption = null;
+  let formOption = null;
+
+  sizeRadioOptions.forEach(option => {
+    if (option.checked) {
+      sizeOption = option.value;
+    }
+  });
+
+  formRadioOptions.forEach(option => {
+    if (option.checked) {
+      formOption = option.value;
+    }
+  });
+
+  // sizeRadioOptions.forEach(option => {
+  //   if (option.checked) {
+  //     sizeOption = option.value;
+  //   }
+  // });
+
+  // formRadioOptions.forEach(option => {
+  //   if (option.checked) {
+  //     formOption = option.value;
+  //   }
+  // });
+
+  const bodyJSON = JSON.stringify({
+    productId: product.idProduct,
+    price: product.Price,
+    quantity: quantity,
+    basketId: document.getElementById('basketList').value,
+    option1: sizeOption,
+    option2: formOption
+  });
+
+  // Send the data to the server using fetch API or AJAX
+  fetch('/add-to-basket', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: bodyJSON
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    // Handle the response from the server
+    // For example, update the numberOfProducts variable and update the basket icon
+  })
+  .catch(error => {
+    console.error('Error adding to basket:', error);
+  });
+
+  console.log(bodyJSON);
+
+}
+
+  </script>
+  
+
+
+</body>
+
+</html>

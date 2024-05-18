@@ -1,0 +1,119 @@
+<body>
+  
+  <div class="centered-content">
+    <h1 class="header-title">Product Details   </h1>
+  </div>
+  <div class="grid-container">
+    <div class="left-column">
+      <a href="/productslist">< Back to All Products</a>
+    </div>
+    <div class="middle-column">
+      <h2 class="subtitle"> </h2>
+    </div>
+    <div class="right-column">
+      <a href="/productupdate/<%= product.idProduct %>" class="edit-link">
+        <button class="edit-button-view">
+          <img src="/content/images/edit_icon.png" alt="Edit" width="50" height="50">
+        </button>
+      </a>
+    </div>
+  </div>
+      
+  <div class="table-container">
+    <table>
+    <tr>
+      <td>ID:</td>
+      <td>
+        <%= product.idProduct %>
+
+      </td>
+      <td rowspan="6" style="width: 300px; text-align: center;">
+        <img src="/content/images/<%= product.ProductImage %>" alt="<%= product.ProductName %> Image" width="200" height="200">
+      </td>
+    </tr>
+    <tr>
+      <td>Name:</td>
+      <td><%= product.ProductName %></td>
+    </tr>
+    <tr>
+      <td>Description:</td>
+      <td><%= product.Description %></td>
+    </tr>
+    <tr>
+      <td>Stock:</td>
+      <td><%= product.STOCK %></td>
+    </tr>
+    <tr>
+      <td>Price:</td>
+      <td><%= product.Price %></td>
+    </tr>
+    <tr>
+      <td>Department:</td>
+      <td>
+        <% depts.forEach((dept) => { %>
+          <% if (product.idDepartment == dept.idDeptartment) { %>
+            <%= dept.deptName %>
+          <% } %>
+        <% }) %>
+      </td>
+    </tr>
+    <tr>
+      <td>Sale Start:</td>
+      <td colspan="2"><%= product.SaleStart %></td>
+    </tr>
+    <tr>
+      <td>Sale End:</td>
+      <td colspan="2"><%= product.SaleEnd %></td>
+    </tr>
+    <tr>
+      <td>Sale Price:</td>
+      <td colspan="2"><%= product.SalePrice %></td>
+    </tr>
+    <tr>
+      <td>Active:</td>
+      <td colspan="2"><%= product.Active %></td>
+    </tr>
+    <tr>
+      <td>Featured:</td>
+      <td colspan="2"><%= product.Featured %></td>
+    </tr>
+    <tr>
+      <td>Feature Start:</td>
+      <td colspan="2"><%= product.FeatureStart %></td>
+    </tr>
+    <tr>
+      <td>Feature End:</td>
+      <td colspan="2"><%= product.FeatureEnd %></td>
+    </tr>
+    <tr>
+      <td>Type:</td>
+      <td colspan="2"><%= product.Type %></td>
+    </tr>
+    <tr>
+      <td>ORDERED:</td>
+      <td colspan="2"><%= product.ORDERED %></td>
+    </tr>
+    <tr>
+      <td>REORDER:</td>
+      <td colspan="2"><%= product.REORDER %></td>
+    </tr>
+  </table>
+</div>
+
+<div class="grid-container">
+  <div class="left-column">
+    <a href="/productslist">< Back to All Products</a>
+  </div>
+  <div class="middle-column">
+    <h2 class="subtitle"> </h2>
+  </div>
+  <div class="right-column">
+    <a href="/productupdate/<%= product.idProduct %>" class="edit-link">
+      <button class="edit-button-view">
+        <img src="/content/images/edit_icon.png" alt="Edit" width="50" height="50">
+      </button>
+    </a>
+  </div>
+</div>
+
+</body>

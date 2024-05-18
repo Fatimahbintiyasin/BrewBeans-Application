@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Basket Status</title>
+  <link rel="stylesheet" href="/content/style.css">
+</head>
+<body>
+  
+  <div class="centered-content">
+    <h1 class="header-title">Edit Basket Status</h1>
+  </div>
+  <div class="grid-container">
+    <div class="left-column">
+      <a href="/basketstatuslist/<%= basketStatus.idBasket %>">< Back to All baskets</a>
+    </div>
+    <div class="middle-column">
+      <h2 class="subtitle"></h2>
+    </div>
+    <div class="right-column">
+      <!-- Edit button can be added if needed -->
+    </div>
+  </div>
+  
+
+
+  <form action="/basketstatusadd" method="post">
+    <div class="table-container">
+      <table>
+        <tr>
+          <td>Basket ID:</td>
+          <td><input type="text" name="idBasket" value="<%= basketStatus.idBasket %>" readonly></td>
+        </tr>
+
+        <tr>
+          <td>Status ID:</td>
+          <td><input type="text" name="idStatus" value="<%= basketStatus.idStatus %>" readonly></td>
+        </tr>
+        
+        <tr>
+          <td>Stage ID:</td>
+          <td><input type="text" name="idStage" value="<%= basketStatus.idStage %>"></td>
+        </tr>
+
+        <tr>
+          <td>Stage Date:</td>
+          <td><input type="date" name="dtStage" value="<%= basketStatus.dtStage %>"></td>
+        </tr>
+
+        <tr>
+          <td>Notes:</td>
+          <td><input type="text" name="Notes" value="<%= basketStatus.Notes %>"></td>
+        </tr>
+
+        <tr>
+          <td>Shipper:</td>
+          <td><input type="text" name="shipper" value="<%= basketStatus.shipper %>"></td>
+        </tr>
+
+        <tr>
+          <td>Shipping Number:</td>
+          <td><input type="text" name="ShippingNum" value="<%= basketStatus.ShippingNum %>"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="button-container">
+      <button type="submit" class="btn btn-success">Update</button>
+      <a href="/basketstatuslist/<%= basketStatus.idBasket %>" class="btn btn-danger">Cancel</a>
+    </div>
+  </form>
+</body>
+</html>

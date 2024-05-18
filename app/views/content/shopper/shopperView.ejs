@@ -1,0 +1,72 @@
+<body>
+    <div class="centered-content">
+      <h1 class="header-title">Shopper Details</h1>
+    </div>
+    <div class="centered-content">
+        <h2 class="subtitle"><%= shopper.FirstName %> <%= shopper.LastName %>
+            (Total Purchases: $<%= totalPurchases %> )
+        </h2>
+      </div>
+    <div class="grid-container">
+      <div class="left-column">
+        <a href="/shopperslist">< Back to All Shoppers</a>
+      </div>
+      <div class="middle-column">
+      </div>
+      <!-- No edit button provided in the original provided code, adjust as needed -->
+    </div>
+    
+    <div class="table-container">
+      <table>
+        <tr>
+          <td>ID:</td>
+          <td><%= shopper.idShopper %></td>
+        </tr>
+        <tr>
+          <td>First Name:</td>
+          <td><%= shopper.FirstName %></td>
+        </tr>
+        <tr>
+          <td>Last Name:</td>
+          <td><%= shopper.LastName %></td>
+        </tr>
+        <tr>
+          <td>Address:</td>
+          <td><%= shopper.Address %></td>
+        </tr>
+        <tr>
+          <td>City:</td>
+          <td><%= shopper.City %></td>
+        </tr>
+        <tr>
+          <td>State:</td>
+          <td><%= shopper.State %></td>
+        </tr>
+        <tr>
+          <td>Zip Code:</td>
+          <td><%= shopper.ZipCode %></td>
+        </tr>
+        <tr>
+          <td>Phone:</td>
+          <td><%= shopper.Phone %></td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td><%= shopper.Email %></td>
+        </tr>
+        <tr>
+          <td>Province:</td>
+          <td><%= shopper.Province %></td>
+        </tr>
+        <tr>
+          <td>Country:</td>
+          <td><%= shopper.Country %></td>
+        </tr>
+        <tr>
+          <td>Promo:</td>
+          <td><%= shopper.promo %></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+  
